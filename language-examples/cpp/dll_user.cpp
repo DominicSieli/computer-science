@@ -1,5 +1,6 @@
 #include <iostream>
-#include "DLL.h"
+
+#include "dll.h"
 
 int main()
 {

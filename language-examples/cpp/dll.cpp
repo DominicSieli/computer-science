@@ -1,4 +1,4 @@
-#include "DLL.h"
+#include "dll.h"
 
 namespace API
 {

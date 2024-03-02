@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Configuration.h"
+#include "configuration.h"
 
 #ifdef LINUX
 	#define SLASH "/"
