@@ -5,7 +5,7 @@ namespace Algorithms
 {
 	public static class CountingSort
 	{
-		public static void Sort(int[] array)
+		public static void sort(int[] array)
 		{
 			int min = array.Min();
 			int max = array.Max();

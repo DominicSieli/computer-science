@@ -1,10 +1,12 @@
-#pragma once
+#ifndef SELECTION_SORT
+#define SELECTION_SORT
+
 #include <vector>
 
 namespace Algorithms
 {
 	template<typename T>
-	void SelectionSort(std::vector<T>& vector)
+	void selection_sort(std::vector<T>& vector)
 	{
 		unsigned int min = 0;
 
@@ -21,3 +23,5 @@ namespace Algorithms
 		}
 	}
 }
+
+#endif

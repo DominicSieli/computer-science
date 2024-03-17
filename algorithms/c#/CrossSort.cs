@@ -4,18 +4,18 @@ namespace Algorithms
 {
 	public static class CrossSort
 	{
-		public static void Sort(int[] array)
+		public static void sort(int[] array)
 		{
 			int j = 0;
-			int l = 0;
-			int r = array.Length - 1;
+			int left = 0;
+			int right = array.Length - 1;
 			bool sorted = false;
 
 			while(sorted == false)
 			{
 				sorted = true;
 
-				for(int i = l; i < r; i++)
+				for(int i = left; i < right; i++)
 				{
 					j = (array.Length - i) - 1;
 
@@ -47,8 +47,8 @@ namespace Algorithms
 					}
 				}
 
-				l++;
-				r--;
+				left++;
+				right--;
 			}
 		}
 	}

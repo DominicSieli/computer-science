@@ -1,10 +1,12 @@
-#pragma once
+#ifndef BUBBLE_SORT
+#define BUBBLE_SORT
+
 #include <vector>
 
 namespace Algorithms
 {
 	template<typename T>
-	void BubbleSort(std::vector<T>& vector)
+	void bubble_sort(std::vector<T>& vector)
 	{
 		bool sorted = false;
 
@@ -25,3 +27,5 @@ namespace Algorithms
 		}
 	}
 }
+
+#endif

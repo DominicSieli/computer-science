@@ -1,10 +1,12 @@
-#pragma once
+#ifndef CROSS_SORT
+#define CROSS_SORT
+
 #include <vector>
 
 namespace Algorithms
 {
 	template<typename T>
-	void CrossSort(std::vector<T>& vector)
+	void cross_sort(std::vector<T>& vector)
 	{
 		if(vector.size() < 2) return;
 
@@ -34,3 +36,5 @@ namespace Algorithms
 		}
 	}
 }
+
+#endif

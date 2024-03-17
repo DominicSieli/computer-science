@@ -2,22 +2,22 @@ namespace Algorithms
 {
 	public static class MergeSort
 	{
-		private static void Merge(int[] array, int start, int middle, int end)
+		private static void merge(int[] array, int start, int median, int end)
 		{
 			int index = 0;
 			int left = start;
-			int right = middle + 1;
+			int right = median + 1;
 			int segment = (end - start) + 1;
 
 			int[] auxiliary = new int[segment];
 
-			while(left <= middle && right <= end)
+			while(left <= median && right <= end)
 			{
 				if(array[left] <= array[right]) auxiliary[index++] = array[left++];
 				else auxiliary[index++] = array[right++];
 			}
 
-			while(left <= middle)
+			while(left <= median)
 			{
 				auxiliary[index++] = array[left++];
 			}
@@ -33,15 +33,15 @@ namespace Algorithms
 			}
 		}
 
-		public static void Sort(int[] array, int start, int end)
+		public static void sort(int[] array, int start, int end)
 		{
 			if(start < end)
 			{
-				int middle = (start + end) / 2;
+				int median = (start + end) / 2;
 
-				Sort(array, start, middle);
-				Sort(array, middle + 1, end);
-				Merge(array, start, middle, end);
+				sort(array, start, median);
+				sort(array, median + 1, end);
+				merge(array, start, median, end);
 			}
 		}
 	}

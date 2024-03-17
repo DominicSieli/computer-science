@@ -4,7 +4,7 @@ namespace Algorithms
 {
 	public static class BubbleSort
 	{
-		public static void Sort(int[] array)
+		public static void sort(int[] array)
 		{
 			bool sorted = false;
 

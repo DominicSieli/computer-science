@@ -3,26 +3,26 @@ public class QuickSort
 	private static int partition(int[] array, int startIndex, int endIndex)
 	{
 		int pivot = array[startIndex];
-		int middleIndex = startIndex;
+		int medianIndex = startIndex;
 
 		for(int i = startIndex + 1; i <= endIndex; i++)
 		{
 			if(array[i] < pivot)
 			{
-				middleIndex++;
+				medianIndex++;
 				int a = array[i];
-				int b = array[middleIndex];
+				int b = array[medianIndex];
 				array[i] = b;
-				array[middleIndex] = a;
+				array[medianIndex] = a;
 			}
 		}
 
 		int x = array[startIndex];
-		int y = array[middleIndex];
+		int y = array[medianIndex];
 		array[startIndex] = y;
-		array[middleIndex] = x;
+		array[medianIndex] = x;
 
-		return middleIndex;
+		return medianIndex;
 	}
 
 	public static void sort(int[] array, int startIndex, int endIndex)

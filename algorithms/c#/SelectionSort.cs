@@ -4,7 +4,7 @@ namespace Algorithms
 {
 	public static class SelectionSort
 	{
-		public static void Sort(int[] array)
+		public static void sort(int[] array)
 		{
 			int minIndex = 0;
 

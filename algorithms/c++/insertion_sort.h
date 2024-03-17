@@ -1,10 +1,12 @@
-#pragma once
+#ifndef INSERTION_SORT
+#define INSERTION_SORT
+
 #include <vector>
 
 namespace Algorithms
 {
 	template<typename T>
-	void InsertionSort(std::vector<T>& vector)
+	void insertion_sort(std::vector<T>& vector)
 	{
 		for(unsigned int i = 1; i < vector.size(); i++)
 		{
@@ -21,3 +23,5 @@ namespace Algorithms
 		}
 	}
 }
+
+#endif
