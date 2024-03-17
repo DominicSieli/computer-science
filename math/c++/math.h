@@ -1,25 +1,25 @@
-#pragma once
+#ifndef MATH
+#define MATH
 
 namespace Math
 {
-	int Power(int b, int e)
-	{
-		int p = 1;
-		for(int i = 0; i < e; i++) p *= b;
-		return p;
-	}
+	int power(int, int);
 
-	int Logarithm(int b, int p)
-	{
-		int e = 0;
-		while(Power(b, e) < p) e++;
-		return e;
-	}
+	int logarithm(int, int);
 
-	int Summation(int start, int stop, int e = 1)
-	{
-		unsigned int s = 0;
-		for(int i = start; i < stop + 1; i++) s += Power(i, e);
-		return s;
-	}
+	int summation(int, int, int);
+
+	double taylor_series(int, int);
+
+	unsigned int factorial_recursive(unsigned int);
+
+	unsigned int factorial_iterative(unsigned int);
+
+	unsigned int fibonacci_recursive(unsigned int);
+
+	unsigned int fibonacci_memoized(unsigned int);
+
+	unsigned int fibonacci_iterative(unsigned int);
 }
+
+#endif
