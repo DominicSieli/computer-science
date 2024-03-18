@@ -7,10 +7,10 @@ namespace DataStructures
 			public T data;
 			public Node next;
 
-			public Node(T d, Node n = null)
+			public Node(T data, Node next = null)
 			{
-				data = d;
-				next = n;
+				this.data = data;
+				this.next = next;
 			}
 		}
 
@@ -87,10 +87,10 @@ namespace DataStructures
 				current = next;
 			}
 
-			Node h = head;
-			Node t = tail;
-			head = t;
-			tail = h;
+			Node headPointer = head;
+			Node tailPointer = tail;
+			head = tailPointer;
+			tail = headPointer;
 		}
 
 		public long Contains(T data)

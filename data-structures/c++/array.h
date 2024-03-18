@@ -1,4 +1,7 @@
-#pragma once
+#ifndef ARRAY
+#define ARRAY
+
+#include <bits/stdc++.h>
 #include <initializer_list>
 
 namespace DataStructures
@@ -138,3 +141,5 @@ namespace DataStructures
 		}
 	};
 }
+
+#endif

@@ -8,11 +8,11 @@ namespace DataStructures
 			public Node next;
 			public Node previous = null;
 
-			public Node(T d, Node n = null, Node p = null)
+			public Node(T data, Node next = null, Node previous = null)
 			{
-				data = d;
-				next = n;
-				previous = p;
+				this.data = data;
+				this.next = next;
+				this.previous = previous;
 			}
 		}
 

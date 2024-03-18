@@ -7,10 +7,10 @@ namespace DataStructures
 			public T data;
 			public Node next;
 
-			public Node(T d, Node n = null)
+			public Node(T data, Node next = null)
 			{
-				data = d;
-				next = n;
+				this.data = data;
+				this.next = next;
 			}
 		}
 

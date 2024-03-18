@@ -8,11 +8,11 @@ namespace DataStructures
 			public Node next;
 			public Node previous;
 
-			public Node(T d, Node n = null, Node p = null)
+			public Node(T data, Node next = null, Node previous = null)
 			{
-				data = d;
-				next = n;
-				previous = p;
+				this.data = data;
+				this.next = next;
+				this.previous = previous;
 			}
 		}
 
@@ -172,10 +172,10 @@ namespace DataStructures
 
 			for(int i = 0; i < count / 2; i++)
 			{
-				T l = left.data;
-				T r = right.data;
-				left.data = r;
-				right.data = l;
+				T leftData = left.data;
+				T rightData = right.data;
+				left.data = rightData;
+				right.data = leftData;
 				left = left.next;
 				right = right.previous;
 			}
