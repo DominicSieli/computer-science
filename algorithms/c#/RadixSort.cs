@@ -4,7 +4,7 @@ namespace Algorithms
 {
 	public static class RadixSort
 	{
-		public static void sort(int[] array)
+		public static void Sort(int[] array)
 		{
 			int max = array[0];
 			Queue<int>[] buckets = new Queue<int>[10];

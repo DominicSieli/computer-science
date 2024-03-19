@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-
 namespace Algorithms
 {
 	public static class BinarySearch
 	{
-		public static int search(int[] array, int target)
+		public static int Search(int[] array, int target)
 		{
 			int left = 0;
 			int median = 0;

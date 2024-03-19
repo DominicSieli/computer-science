@@ -1,6 +1,6 @@
 public class SelectionSort
 {
-	public static void sort(int[] array)
+	public static void Sort(int[] array)
 	{
 		int min = 0;
 

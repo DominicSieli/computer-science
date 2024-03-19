@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-
 namespace Algorithms
 {
 	public static class CrossSort
 	{
-		public static void sort(int[] array)
+		public static void Sort(int[] array)
 		{
 			int j = 0;
 			int left = 0;

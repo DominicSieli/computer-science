@@ -1,6 +1,6 @@
 public class InsertionSort
 {
-	public static void sort(int[] array)
+	public static void Sort(int[] array)
 	{
 		for(int i = 0; i < array.length; i++)
 		{

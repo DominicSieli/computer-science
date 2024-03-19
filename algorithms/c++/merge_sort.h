@@ -11,29 +11,29 @@ namespace Algorithms
 		unsigned int index = 0;
 		unsigned int left = start;
 		unsigned int right = median + 1;
-		unsigned int segment = (end - start) + 1;
+		unsigned int size = (end - start) + 1;
 
-		std::vector<T> auxiliary(segment);
+		std::vector<T> segment(size);
 
 		while(left <= median && right <= end)
 		{
-			if(vector[left] <= vector[right]) auxiliary[index++] = vector[left++];
-			else auxiliary[index++] = vector[right++];
+			if(vector[left] <= vector[right]) segment[index++] = vector[left++];
+			else segment[index++] = vector[right++];
 		}
 
 		while(left <= median)
 		{
-			auxiliary[index++] = vector[left++];
+			segment[index++] = vector[left++];
 		}
 
 		while(right <= end)
 		{
-			auxiliary[index++] = vector[right++];
+			segment[index++] = vector[right++];
 		}
 
-		for(unsigned int i = 0; i < segment; i++)
+		for(unsigned int i = 0; i < size; i++)
 		{
-			vector[start + i] = auxiliary[i];
+			vector[start + i] = segment[i];
 		}
 	}
 

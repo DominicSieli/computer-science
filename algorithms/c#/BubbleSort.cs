@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-
 namespace Algorithms
 {
 	public static class BubbleSort
 	{
-		public static void sort(int[] array)
+		public static void Sort(int[] array)
 		{
 			bool sorted = false;
 

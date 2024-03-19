@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-
 namespace Algorithms
 {
 	public static class QuickSort
 	{
-		private static int partition(int[] array, int startIndex, int endIndex)
+		private static int Partition(int[] array, int startIndex, int endIndex)
 		{
 			int pivot = array[startIndex];
 			int medianIndex = startIndex;
@@ -29,14 +27,14 @@ namespace Algorithms
 			return medianIndex;
 		}
 
-		public static void sort(int[] array, int startIndex, int endIndex)
+		public static void Sort(int[] array, int startIndex, int endIndex)
 		{
 			if(startIndex < endIndex)
 			{
-				int pivotIndex = partition(array, startIndex, endIndex);
+				int pivotIndex = Partition(array, startIndex, endIndex);
 
-				sort(array, startIndex, pivotIndex - 1);
-				sort(array, pivotIndex + 1, endIndex);
+				Sort(array, startIndex, pivotIndex - 1);
+				Sort(array, pivotIndex + 1, endIndex);
 			}
 		}
 	}
