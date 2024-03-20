@@ -5,7 +5,7 @@ namespace DataStructures
 {
 	public class BinarySearchTree<T> where T : IComparable
 	{
-	private class Node
+		private class Node
 		{
 			public T data;
 			public Node left;

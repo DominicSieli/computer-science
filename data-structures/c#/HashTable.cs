@@ -77,9 +77,9 @@ namespace DataStructures
 		{
 			uint hash = 0;
 
-			foreach(var chr in key)
+			foreach(var character in key)
 			{
-				hash += (uint)chr;
+				hash += (uint)character;
 			}
 
 			return hash % SIZE;

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace DataStructures
 {
@@ -139,50 +138,49 @@ namespace DataStructures
 
 		public void Sort()
 		{
-			if(count < 2) return;
+			MergeSort(0, array.Length - 1);
+		}
 
-			long l = 0;
-			long r = 0;
-			long left = 0;
-			long right = count - 1;
+		private void Merge(int start, int median, int end)
+		{
+			int index = 0;
+			int left = start;
+			int right = median + 1;
+			int size = (end - start) + 1;
 
-			while(left < right)
+			T[] segment = new T[size];
+
+			while(left <= median && right <= end)
 			{
-				if(array[left].CompareTo(array[right]) > 0)
-				{
-					T data1 = array[left];
-					T data2 = array[right];
-					array[right] = data1;
-					array[left] = data2;
-				}
+				if(array[left].CompareTo(array[right]) <= 0) segment[index++] = array[left++];
+				else segment[index++] = array[right++];
+			}
 
-				l = left;
-				r = right;
+			while(left <= median)
+			{
+				segment[index++] = array[left++];
+			}
 
-				while(l < right)
-				{
-					if(array[l].CompareTo(array[l + 1]) > 0)
-					{
-						T data1 = array[l];
-						T data2 = array[l + 1];
-						array[l + 1] = data1;
-						array[l] = data2;
-					}
+			while(right <= end)
+			{
+				segment[index++] = array[right++];
+			}
 
-					if(array[r].CompareTo(array[r - 1]) < 0)
-					{
-						T data1 = array[r];
-						T data2 = array[r - 1];
-						array[r - 1] = data1;
-						array[r] = data2;
-					}
+			for(int i = 0; i < size; i++)
+			{
+				array[start + i] = segment[i];
+			}
+		}
 
-					l++;
-					r--;
-				}
+		private void MergeSort(int start, int end)
+		{
+			if(start < end)
+			{
+				int median = (start + end) / 2;
 
-				left++;
-				right--;
+				MergeSort(start, median);
+				MergeSort(median + 1, end);
+				Merge(start, median, end);
 			}
 		}
 	}

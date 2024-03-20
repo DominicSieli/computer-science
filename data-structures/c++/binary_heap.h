@@ -1,87 +1,92 @@
-#pragma once
+#ifndef BINARY_HEAP
+#define BINARY_HEAP
+
 #include <vector>
+#include <bits/stdc++.h>
 #include <initializer_list>
 
 namespace DataStructures
 {
 	template<typename T>
-	class BinaryHeap
-	{
-	private:
-		unsigned int size = 0;
-		std::vector<T> vector;
-
-	public:
-		BinaryHeap()
-		{}
-
-		BinaryHeap(const std::initializer_list<T>& list)
+		class BinaryHeap
 		{
-			for(const T& data : list)
-			{
-				Insert(data);
-			}
-		}
+			private:
+				unsigned int size = 0;
+				std::vector<T> vector;
 
-		~BinaryHeap()
-		{}
+			public:
+				BinaryHeap()
+				{}
 
-		T Max()
-		{
-			return vector[1];
-		}
+				BinaryHeap(const std::initializer_list<T>& list)
+				{
+					for(const T& data : list)
+					{
+						Insert(data);
+					}
+				}
 
-		bool Empty()
-		{
-			return size == 0;
-		}
+				~BinaryHeap()
+				{}
 
-		void Insert(const T& data)
-		{
-			size++;
-			if(size >= vector.size()) vector.push_back(0);
-			vector[size] = data;
-			ShiftUp(size);
-		}
+				T Max()
+				{
+					return vector[1];
+				}
 
-		T RemoveMax()
-		{
-			T max = vector[1];
-			std::swap(vector[1], vector[size--]);
-			ShiftDown(1);
-			return max;
-		}
+				bool Empty()
+				{
+					return size == 0;
+				}
 
-	private:
-		unsigned int p(unsigned int i) {return i >> 1;}
-		unsigned int l(unsigned int i) {return i << 1;}
-		unsigned int r(unsigned int i) {return (i << 1) + 1;}
+				void Insert(const T& data)
+				{
+					size++;
+					if(size >= vector.size()) vector.push_back(0);
+					vector[size] = data;
+					ShiftUp(size);
+				}
 
-		void ShiftUp(unsigned int index)
-		{
-			if(index == 1) return;
+				T RemoveMax()
+				{
+					T max = vector[1];
+					std::swap(vector[1], vector[size--]);
+					ShiftDown(1);
+					return max;
+				}
 
-			if(vector[index] > vector[p(index)])
-			{
-				std::swap(vector[index], vector[p(index)]);
-				ShiftUp(index);
-			}
-		}
+			private:
+				unsigned int p(unsigned int i) {return i >> 1;}
+				unsigned int l(unsigned int i) {return i << 1;}
+				unsigned int r(unsigned int i) {return (i << 1) + 1;}
 
-		void ShiftDown(unsigned int index)
-		{
-			if(index > size) return;
+				void ShiftUp(unsigned int index)
+				{
+					if(index == 1) return;
 
-			unsigned int swapIndex = index;
+					if(vector[index] > vector[p(index)])
+					{
+						std::swap(vector[index], vector[p(index)]);
+						ShiftUp(index);
+					}
+				}
 
-			if(l(index) <= size && vector[index] < vector[l(index)]) swapIndex = l(index);
-			if(r(index) <= size && vector[swapIndex] < vector[r(index)]) swapIndex = r(index);
+				void ShiftDown(unsigned int index)
+				{
+					if(index > size) return;
 
-			if(swapIndex != index)
-			{
-				std::swap(vector[index], vector[swapIndex]);
-				ShiftDown(swapIndex);
-			}
-		}
-	};
+					unsigned int swapIndex = index;
+
+					if(l(index) <= size && vector[index] < vector[l(index)]) swapIndex = l(index);
+					if(r(index) <= size && vector[swapIndex] < vector[r(index)]) swapIndex = r(index);
+
+					if(swapIndex != index)
+					{
+						std::swap(vector[index], vector[swapIndex]);
+						ShiftDown(swapIndex);
+					}
+				}
+		};
 }
+
+#endif
