@@ -3,40 +3,40 @@
 template<typename T>
 class Array
 {
-private:
-	T* array = nullptr;
-	unsigned int n = 0;
+	private:
+		T* array = nullptr;
+		unsigned int size = 0;
 
-public:
-	Array(const unsigned int& n) : array{new T[n]}, n{n} {}
+	public:
+		Array(const unsigned int& size) : array{new T[size]}, size{size} {}
 
-	Array(const Array& copy_class) : array{new T[copy_class.n]}, n{copy_class.n}
-	{
-		std::cout << "Array Copied" << '\n';
-		for(unsigned int i = 0; i < this->n; i++) this->array[i] = copy_class.array[i];
-	}
+		Array(const Array& copy_class) : array{new T[copy_class.size]}, size{copy_class.size}
+		{
+			std::cout << "Array Copied" << '\n';
+			for(unsigned int i = 0; i < size; i++) array[i] = copy_class.array[i];
+		}
 
-	Array(Array&& move_class) noexcept : array{std::move(move_class.array)}, n{move_class.n}
-	{
-		move_class.n = 0;
-		move_class.array = nullptr;
-		std::cout << "Array Moved" << '\n';
-	}
+		Array(Array&& move_class) noexcept : array{std::move(move_class.array)}, size{move_class.size}
+		{
+			move_class.size = 0;
+			move_class.array = nullptr;
+			std::cout << "Array Moved" << '\n';
+		}
 
-	~Array()
-	{
-		delete array;
-	}
+		~Array()
+		{
+			delete[] array;
+		}
 
-	T& operator[](const unsigned int& index)
-	{
-		return this->array[index];
-	}
+		T& operator[](const unsigned int& index)
+		{
+			return array[index];
+		}
 
-	unsigned int Size() const noexcept
-	{
-		return this->n;
-	}
+		unsigned int Size() const noexcept
+		{
+			return size;
+		}
 };
 
 int main()

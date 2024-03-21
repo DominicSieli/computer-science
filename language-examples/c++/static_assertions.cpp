@@ -1,6 +1,4 @@
-#include <iostream>
-
-const int predicate = 10;
+const int predicate = 20;
 
 int main()
 {

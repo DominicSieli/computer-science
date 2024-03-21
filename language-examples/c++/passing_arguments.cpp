@@ -1,27 +1,27 @@
 #include <iostream>
 
-void Pass_Copy(int i)
+void PassCopy(int i)
 {
-	std::cout << "Pass_Copy: " << i << '\n';
+	std::cout << "PassCopy: " << i << '\n';
 }
 
-void Pass_Pointer(int* i)
+void PassPointer(int* i)
 {
-	std::cout << "Pass_Pointer: " << *i << '\n';
+	std::cout << "PassPointer: " << *i << '\n';
 }
 
-void Pass_Reference(int& i)
+void PassReference(int& i)
 {
-	std::cout << "Pass_Reference: " << i << '\n';
+	std::cout << "PassReference: " << i << '\n';
 }
 
 int main()
 {
 	int* i = new int(20);
 
-	Pass_Copy(*i);
-	Pass_Pointer(i);
-	Pass_Reference(*i);
+	PassCopy(*i);
+	PassPointer(i);
+	PassReference(*i);
 
 	delete i;
 	i = nullptr;

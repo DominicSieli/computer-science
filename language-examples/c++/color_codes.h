@@ -1,4 +1,5 @@
-#pragma once
+#ifndef COLOR_CODES
+#define COLOR_CODES
 
 #include "configuration.h"
 
@@ -26,4 +27,6 @@ enum COLOR : unsigned short int
 	YELLOW = 14,
 	MAGENTA = 13
 };
+#endif
+
 #endif

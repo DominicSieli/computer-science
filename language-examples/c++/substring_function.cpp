@@ -4,13 +4,13 @@
 
 std::vector<std::string> Substrings(const std::string& string, const char& separator)
 {
-   unsigned int index = 0;
-   unsigned int length = 0;
-   unsigned int separators = 0;
-   std::vector<std::string> substrings;
+	unsigned int index = 0;
+	unsigned int length = 0;
+	unsigned int separators = 0;
+	std::vector<std::string> substrings;
 
-   while(index < string.length())
-   {
+	while(index < string.length())
+	{
 		length = 0;
 		separators = 0;
 
@@ -30,9 +30,9 @@ std::vector<std::string> Substrings(const std::string& string, const char& separ
 		}
 
 		index += (length + separators);
-   }
+	}
 
-   return substrings;
+	return substrings;
 }
 
 int main()

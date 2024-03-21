@@ -1,40 +1,40 @@
 #include <iostream>
 
 template<typename T>
-class Abstract_Base_Class
+class AbstractBaseClass
 {
-public:
-	virtual ~Abstract_Base_Class() {}
-	virtual void Set_Data(T) = 0;
-	virtual T Get_Data() const = 0;
+	public:
+		virtual ~AbstractBaseClass() {}
+		virtual void SetData(T) = 0;
+		virtual T GetData() const = 0;
 };
 
 template<typename T>
-class Sub_Class : public Abstract_Base_Class<T>
+class SubClass : public AbstractBaseClass<T>
 {
-private:
-	T data;
+	private:
+		T data;
 
-public:
-	Sub_Class(T value) : data{value} {}
-	~Sub_Class() {}
+	public:
+		SubClass(T value) : data{value} {}
+		~SubClass() {}
 
-	void Set_Data(T value)
-	{
-		this->data = value;
-	}
+		void SetData(T value)
+		{
+			data = value;
+		}
 
-	T Get_Data() const
-	{
-		return this->data;
-	}
+		T GetData() const
+		{
+			return data;
+		}
 };
 
 int main()
 {
-	Sub_Class<int> sub_Class(0);
-	std::cout << "Data Value: " << sub_Class.Get_Data() << '\n';
+	SubClass<int> sub_class(0);
+	std::cout << "Data Value: " << sub_class.GetData() << '\n';
 
-	sub_Class.Set_Data(20);
-	std::cout << "Data Value: " << sub_Class.Get_Data() << '\n';
+	sub_class.SetData(20);
+	std::cout << "Data Value: " << sub_class.GetData() << '\n';
 }

@@ -2,20 +2,20 @@
 #include <sstream>
 #include <iostream>
 
-std::string Variatic_List()
+std::string VariaticList()
 {
 	return "";
 }
 
 template<typename T0, typename... Tn>
-std::string Variatic_List(T0 t0, Tn... list)
+std::string VariaticList(T0 t0, Tn... list)
 {
 	std::stringstream sstream;
-	sstream << t0 << " " << Variatic_List(list...);
+	sstream << t0 << " " << VariaticList(list...);
 	return sstream.str();
 }
 
 int main()
 {
-	std::cout << Variatic_List("Dom", 'A', 2.22, 4) << '\n';
+	std::cout << VariaticList("Dom", 'A', 2.22, 4) << '\n';
 }

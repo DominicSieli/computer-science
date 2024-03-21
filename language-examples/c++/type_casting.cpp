@@ -5,14 +5,14 @@ int i = (int)d;
 char c = (char)i;
 const int CONST = 5;
 
-int *staticCastPtr = static_cast<int*>(&i);
-int *reinterpretCastPtr = reinterpret_cast<int*>(&c);
-int *constCastPtr = const_cast<int*>(&CONST);
+int *static_cast_pointer = static_cast<int*>(&i);
+int *reinterpret_cast_pointer = reinterpret_cast<int*>(&c);
+int *const_cast_pointer = const_cast<int*>(&CONST);
 
 class BaseClass
 {
-public:
-	virtual void test() {}
+	public:
+		virtual void test() {}
 };
 
 class SubClass : public BaseClass
@@ -20,8 +20,8 @@ class SubClass : public BaseClass
 
 int main()
 {
-	SubClass *subClass = new SubClass();
-	BaseClass *baseClass = dynamic_cast<BaseClass*>(subClass);
+	SubClass *sub_class = new SubClass();
+	BaseClass *base_class = dynamic_cast<BaseClass*>(sub_class);
 
-	std::cout << &baseClass << '\n';
+	std::cout << &base_class << '\n';
 }

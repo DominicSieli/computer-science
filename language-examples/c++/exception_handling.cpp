@@ -2,40 +2,40 @@
 #include <iostream>
 #include <exception>
 
-class Out_Of_Range
+class OutOfRange
 {
-private:
-	int data = std::numeric_limits<int>::max();
+	private:
+		int data = std::numeric_limits<int>::max();
 
-public:
-	const int Get_Data() const noexcept
-	{
-		return this->data;
-	}
+	public:
+		const int GetData() const noexcept
+		{
+			return data;
+		}
 
-	void Add_Data(int addend)
-	{
-		try
+		void AddData(int addend)
 		{
-			if(data + addend < 1)
+			try
 			{
-				this->data = std::numeric_limits<int>::max();
-				throw std::runtime_error("Value out of range exception in Out_Of_Range class Add_Data method!");
+				if(data + addend < 1)
+				{
+					data = std::numeric_limits<int>::max();
+					throw std::runtime_error("Value out of range exception in OutOfRange class AddData method!");
+				}
+				else
+				{
+					data += addend;
+				}
 			}
-			else
+			catch(const std::exception& exception)
 			{
-				this->data += addend;
+				std::cerr << exception.what() << '\n';
+			}
+			catch(...)
+			{
+				std::cerr << "Runtime error in ExceptionHandling class AddData method!!" << '\n';
 			}
 		}
-		catch(const std::exception& exception)
-		{
-			std::cerr << exception.what() << '\n';
-		}
-		catch(...)
-		{
-			std::cerr << "Runtime error in ExceptionHandling class Add_Data method!!" << '\n';
-		}
-	}
 };
 
 double Divide(double numerator, double denominator)
@@ -67,7 +67,7 @@ double Divide(double numerator, double denominator)
 
 int main()
 {
-	Out_Of_Range out_Of_Range;
-	out_Of_Range.Add_Data(10);
+	OutOfRange out_Of_range;
+	out_Of_range.AddData(10);
 	double quotient = Divide(10.00, 0.00);
 }

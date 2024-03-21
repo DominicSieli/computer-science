@@ -7,30 +7,30 @@
 int main()
 {
 	system(CREATE_DIRECTORY "File_OUTPUT");
-	system(CREATE_FILE "File_OUTPUT" SLASH "Output.txt");
+	system(CREATE_FILE "File_OUTPUT" SLASH "file-output.txt");
 
-	std::ifstream readFile;
+	std::ifstream read_file;
 
-	readFile.open("File_OUTPUT" SLASH "Output.txt", std::ios_base::in);
+	read_file.open("File_OUTPUT" SLASH "file-output.txt", std::ios_base::in);
 
-	if(readFile.is_open())
+	if(read_file.is_open())
 	{
 		std::string text = "";
 
-		while(readFile.good())
+		while(read_file.good())
 		{
-			getline(readFile, text);
+			getline(read_file, text);
 			std::cout << text << '\n';
 		}
 
-		readFile.close();
+		read_file.close();
 	}
 
-	std::ofstream writeFile;
+	std::ofstream write_file;
 
-	writeFile.open("File_OUTPUT" SLASH "Output.txt", std::ios_base::out | std::ios_base::trunc);
+	write_file.open("File_OUTPUT" SLASH "Output.txt", std::ios_base::out | std::ios_base::trunc);
 
-	if(writeFile.is_open())
+	if(write_file.is_open())
 	{
 		std::string text = "";
 
@@ -39,7 +39,7 @@ int main()
 			text += "Line: " + std::to_string(i) + '\n';
 		}
 
-		writeFile << text;
-		writeFile.close();
+		write_file << text;
+		write_file.close();
 	}
 }

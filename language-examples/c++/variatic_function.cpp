@@ -1,7 +1,7 @@
 #include <cstdarg>
 #include <iostream>
 
-void Variatic_Function(unsigned int n, ...)
+void VariaticFunction(unsigned int n, ...)
 {
 	va_list list;
 	va_start(list, n);
@@ -18,5 +18,5 @@ void Variatic_Function(unsigned int n, ...)
 
 int main()
 {
-	Variatic_Function(6,1,2,3,4,5,6);
+	VariaticFunction(6,1,2,3,4,5,6);
 }

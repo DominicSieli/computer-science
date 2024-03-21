@@ -1,2 +1,3 @@
-#pragma once
+#ifndef LINUX
 #define LINUX
+#endif
