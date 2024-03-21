@@ -44,39 +44,39 @@ namespace DataStructures
 					nodes.erase(node);
 				}
 
-				void AddOneDirectionalEdge(const T& node1, const T& node2)
+				void AddOneDirectionalEdge(const T& node_1, const T& node_2)
 				{
-					AddNode(node1);
-					AddNode(node2);
-					nodes.at(node1).push_back(node2);
+					AddNode(node_1);
+					AddNode(node_2);
+					nodes.at(node_1).push_back(node_2);
 				}
 
-				void AddTwoDirectionalEdge(const T& node1, const T& node2)
+				void AddTwoDirectionalEdge(const T& node_1, const T& node_2)
 				{
-					AddNode(node1);
-					AddNode(node2);
-					nodes.at(node1).push_back(node2);
-					nodes.at(node2).push_back(node1);
+					AddNode(node_1);
+					AddNode(node_2);
+					nodes.at(node_1).push_back(node_2);
+					nodes.at(node_2).push_back(node_1);
 				}
 
-				void DeleteOneDirectionalEdge(const T& node1, const T& node2)
+				void DeleteOneDirectionalEdge(const T& node_1, const T& node_2)
 				{
-					for(unsigned int i = 0; i < nodes.at(node1).size(); i++)
+					for(unsigned int i = 0; i < nodes.at(node_1).size(); i++)
 					{
-						if(nodes.at(node1)[i] == node2) nodes.at(node1).erase(nodes.at(node1).begin() + i);
+						if(nodes.at(node_1)[i] == node_2) nodes.at(node_1).erase(nodes.at(node_1).begin() + i);
 					}
 				}
 
-				void DeleteTwoDirectionalEdge(const T& node1, const T& node2)
+				void DeleteTwoDirectionalEdge(const T& node_1, const T& node_2)
 				{
-					for(unsigned int i = 0; i < nodes.at(node1).size(); i++)
+					for(unsigned int i = 0; i < nodes.at(node_1).size(); i++)
 					{
-						if(nodes.at(node1)[i] == node2) nodes.at(node1).erase(nodes.at(node1).begin() + i);
+						if(nodes.at(node_1)[i] == node_2) nodes.at(node_1).erase(nodes.at(node_1).begin() + i);
 					}
 
-					for(unsigned int i = 0; i < nodes.at(node2).size(); i++)
+					for(unsigned int i = 0; i < nodes.at(node_2).size(); i++)
 					{
-						if(nodes.at(node2)[i] == node1) nodes.at(node2).erase(nodes.at(node2).begin() + i);
+						if(nodes.at(node_2)[i] == node_1) nodes.at(node_2).erase(nodes.at(node_2).begin() + i);
 					}
 				}
 

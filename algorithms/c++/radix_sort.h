@@ -7,35 +7,35 @@
 namespace Algorithms
 {
 	template<typename T>
-	void radix_sort(std::vector<T>& vector)
-	{
-		T max = vector[0];
-		std::vector<std::queue<T>> buckets(10);
-
-		for(unsigned int i = 0; i < vector.size(); i++)
+		void RadixSort(std::vector<T>& vector)
 		{
-			if(vector[i] > max) max = vector[i];
-		}
+			T max = vector[0];
+			std::vector<std::queue<T>> buckets(10);
 
-		for(unsigned int exp = 1; max/exp > 0; exp *= 10)
-		{
 			for(unsigned int i = 0; i < vector.size(); i++)
 			{
-				buckets[(vector[i]/exp)%10].push(vector[i]);
+				if(vector[i] > max) max = vector[i];
 			}
 
-			unsigned int counter = 0;
-
-			for(unsigned int i = 0; i < 10; i++)
+			for(unsigned int exp = 1; max/exp > 0; exp *= 10)
 			{
-				while(buckets[i].empty() == false)
+				for(unsigned int i = 0; i < vector.size(); i++)
 				{
-					vector[counter++] = buckets[i].front();
-					buckets[i].pop();
+					buckets[(vector[i]/exp)%10].push(vector[i]);
+				}
+
+				unsigned int counter = 0;
+
+				for(unsigned int i = 0; i < 10; i++)
+				{
+					while(buckets[i].empty() == false)
+					{
+						vector[counter++] = buckets[i].front();
+						buckets[i].pop();
+					}
 				}
 			}
 		}
-	}
 }
 
 #endif

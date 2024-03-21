@@ -6,22 +6,22 @@
 namespace Algorithms
 {
 	template<typename T>
-	void insertion_sort(std::vector<T>& vector)
-	{
-		for(unsigned int i = 1; i < vector.size(); i++)
+		void InsertionSort(std::vector<T>& vector)
 		{
-			int j = i - 1;
-			T key = vector[i];
-
-			while(j >= 0 && vector[j] > key)
+			for(unsigned int i = 1; i < vector.size(); i++)
 			{
-				vector[j + 1] = vector[j];
-				j--;
-			}
+				int j = i - 1;
+				T key = vector[i];
 
-			vector[j + 1] = key;
+				while(j >= 0 && vector[j] > key)
+				{
+					vector[j + 1] = vector[j];
+					j--;
+				}
+
+				vector[j + 1] = key;
+			}
 		}
-	}
 }
 
 #endif

@@ -65,12 +65,12 @@ namespace DataStructures
 					Node* node = NodePointer(root, data);
 					Node* successor = Successor(NodePointer(root, data));
 					Node* parent = (node != root) ? ParentPointer(root, data) : nullptr;
-					Node* successorParent = (successor != nullptr) ? ParentPointer(root, successor->data) : nullptr;
+					Node* successor_parent = (successor != nullptr) ? ParentPointer(root, successor->data) : nullptr;
 
 					if(parent != nullptr && node == parent->left) parent->left = successor;
 					if(parent != nullptr && node == parent->right) parent->right = successor;
-					if(successorParent != nullptr && successorParent->left == successor) successorParent->left = nullptr;
-					if(successorParent != nullptr && successorParent->right == successor) successorParent->right = nullptr;
+					if(successor_parent != nullptr && successor_parent->left == successor) successor_parent->left = nullptr;
+					if(successor_parent != nullptr && successor_parent->right == successor) successor_parent->right = nullptr;
 					if(node->left != nullptr && node->left != successor && successor->left == nullptr) successor->left = node->left;
 					if(node->right != nullptr && node->right != successor && successor->right == nullptr) successor->right = node->right;
 					if(node == root) root = successor;

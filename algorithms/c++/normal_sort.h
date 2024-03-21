@@ -6,28 +6,28 @@
 namespace Algorithms
 {
 	template<typename T>
-	void normal_sort(std::vector<T>& vector)
-	{
-		if(vector.size() < 2) return;
-
-		T min = vector[0];
-		T max = vector[0];
-		std::vector<T> normalized_vector(vector.size());
-
-		for(unsigned int i = 0; i < vector.size(); i++)
+		void NormalSort(std::vector<T>& vector)
 		{
-			if(vector[i] < min) min = vector[i];
-			if(vector[i] > max) max = vector[i];
-		}
+			if(vector.size() < 2) return;
 
-		for(unsigned int i = 0; i < vector.size(); i++)
-		{
-			unsigned int index = ((float)(vector[i] - min) / (float)(max - min)) * (float)(vector.size() - 1);
-			normalized_vector[index] = vector[i];
-		}
+			T min = vector[0];
+			T max = vector[0];
+			std::vector<T> normalized_vector(vector.size());
 
-		vector = normalized_vector;
-	}
+			for(unsigned int i = 0; i < vector.size(); i++)
+			{
+				if(vector[i] < min) min = vector[i];
+				if(vector[i] > max) max = vector[i];
+			}
+
+			for(unsigned int i = 0; i < vector.size(); i++)
+			{
+				unsigned int index = ((float)(vector[i] - min) / (float)(max - min)) * (float)(vector.size() - 1);
+				normalized_vector[index] = vector[i];
+			}
+
+			vector = normalized_vector;
+		}
 }
 
 #endif

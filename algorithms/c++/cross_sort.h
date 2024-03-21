@@ -6,35 +6,35 @@
 namespace Algorithms
 {
 	template<typename T>
-	void cross_sort(std::vector<T>& vector)
-	{
-		if(vector.size() < 2) return;
-
-		unsigned int l = 0;
-		unsigned int r = 0;
-		unsigned int left = 0;
-		unsigned int right = vector.size() - 1;
-
-		while(left < right)
+		void CrossSort(std::vector<T>& vector)
 		{
-			if(vector[left] > vector[right]) std::swap(vector[left], vector[right]);
+			if(vector.size() < 2) return;
 
-			l = left;
-			r = right;
+			unsigned int l = 0;
+			unsigned int r = 0;
+			unsigned int left = 0;
+			unsigned int right = vector.size() - 1;
 
-			while(l < right)
+			while(left < right)
 			{
-				if(vector[l] > vector[l + 1]) std::swap(vector[l], vector[l + 1]);
-				if(vector[r] < vector[r - 1]) std::swap(vector[r], vector[r - 1]);
+				if(vector[left] > vector[right]) std::swap(vector[left], vector[right]);
 
-				l++;
-				r--;
+				l = left;
+				r = right;
+
+				while(l < right)
+				{
+					if(vector[l] > vector[l + 1]) std::swap(vector[l], vector[l + 1]);
+					if(vector[r] < vector[r - 1]) std::swap(vector[r], vector[r - 1]);
+
+					l++;
+					r--;
+				}
+
+				left++;
+				right--;
 			}
-
-			left++;
-			right--;
 		}
-	}
 }
 
 #endif

@@ -15,10 +15,10 @@ namespace DataStructures
 				unsigned long long count = 0;
 
 			public:
-				Vector(const unsigned long long& startSize = 0, const T& data = {})
+				Vector(const unsigned long long& start_size = 0, const T& data = {})
 				{
-					size = startSize;
-					vector = new T[startSize];
+					size = start_size;
+					vector = new T[start_size];
 					Fill(data);
 				}
 
@@ -106,15 +106,15 @@ namespace DataStructures
 				{
 					size = count;
 
-					T* newVector = new T[size];
+					T* trimmed_vector = new T[size];
 
 					for(unsigned long long index = 0; index < count; index++)
 					{
-						newVector[index] = vector[index];
+						trimmed_vector[index] = vector[index];
 					}
 
 					delete[] vector;
-					vector = newVector;
+					vector = trimmed_vector;
 				}
 
 				void Add(const T& data, const unsigned long long& expansion = 1)
@@ -124,15 +124,15 @@ namespace DataStructures
 					if(count > size)
 					{
 						size += expansion;
-						T* newVector = new T[size];
+						T* trimmed_vector = new T[size];
 
 						for(unsigned long long index = 0; index < count; index++)
 						{
-							newVector[index] = vector[index];
+							trimmed_vector[index] = vector[index];
 						}
 
 						delete[] vector;
-						vector = newVector;
+						vector = trimmed_vector;
 					}
 
 					vector[count - 1] = data;

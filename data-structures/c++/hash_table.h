@@ -82,9 +82,9 @@ namespace DataStructures
 				{
 					unsigned int hash = 0;
 
-					for(const char& chr : key)
+					for(const char& character : key)
 					{
-						hash += (unsigned int)chr;
+						hash += (unsigned int)character;
 					}
 
 					return hash % S;

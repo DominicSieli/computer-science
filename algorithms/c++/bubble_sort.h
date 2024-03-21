@@ -6,26 +6,26 @@
 namespace Algorithms
 {
 	template<typename T>
-	void bubble_sort(std::vector<T>& vector)
-	{
-		bool sorted = false;
-
-		if(vector.size() < 2) return;
-
-		while(sorted == false)
+		void BubbleSort(std::vector<T>& vector)
 		{
-			sorted = true;
+			bool sorted = false;
 
-			for(unsigned int i = 0; i < vector.size() - 1; i++)
+			if(vector.size() < 2) return;
+
+			while(sorted == false)
 			{
-				if(vector[i] > vector[i + 1])
+				sorted = true;
+
+				for(unsigned int i = 0; i < vector.size() - 1; i++)
 				{
-					sorted = false;
-					std::swap(vector[i], vector[i + 1]);
+					if(vector[i] > vector[i + 1])
+					{
+						sorted = false;
+						std::swap(vector[i], vector[i + 1]);
+					}
 				}
 			}
 		}
-	}
 }
 
 #endif

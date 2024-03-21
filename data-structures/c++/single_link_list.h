@@ -185,7 +185,7 @@ namespace DataStructures
 					if(index == count - 1) {DeleteTail(); return;}
 
 					Node* node = head;
-					Node* nextNode = nullptr;
+					Node* next = nullptr;
 
 					for(unsigned long long i = 0; i < index - 1; i++)
 					{
@@ -193,9 +193,9 @@ namespace DataStructures
 					}
 
 					count--;
-					nextNode = node->next->next;
+					next = node->next->next;
 					delete node->next;
-					node->next = nextNode;
+					node->next = next;
 				}
 
 				void InsertHead(const T& data)

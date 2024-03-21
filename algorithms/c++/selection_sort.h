@@ -6,22 +6,22 @@
 namespace Algorithms
 {
 	template<typename T>
-	void selection_sort(std::vector<T>& vector)
-	{
-		unsigned int min = 0;
-
-		for(unsigned int i = 0; i < vector.size(); i++)
+		void SelectionSort(std::vector<T>& vector)
 		{
-			min = i;
+			unsigned int min = 0;
 
-			for(unsigned int j = i + 1; j < vector.size(); j++)
+			for(unsigned int i = 0; i < vector.size(); i++)
 			{
-				if(vector[j] < vector[min]) min = j;
-			}
+				min = i;
 
-			std::swap(vector[i], vector[min]);
+				for(unsigned int j = i + 1; j < vector.size(); j++)
+				{
+					if(vector[j] < vector[min]) min = j;
+				}
+
+				std::swap(vector[i], vector[min]);
+			}
 		}
-	}
 }
 
 #endif

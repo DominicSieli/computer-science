@@ -75,15 +75,15 @@ namespace DataStructures
 				{
 					if(index > size) return;
 
-					unsigned int swapIndex = index;
+					unsigned int swap_index = index;
 
-					if(l(index) <= size && vector[index] < vector[l(index)]) swapIndex = l(index);
-					if(r(index) <= size && vector[swapIndex] < vector[r(index)]) swapIndex = r(index);
+					if(l(index) <= size && vector[index] < vector[l(index)]) swap_index = l(index);
+					if(r(index) <= size && vector[swap_index] < vector[r(index)]) swap_index = r(index);
 
-					if(swapIndex != index)
+					if(swap_index != index)
 					{
-						std::swap(vector[index], vector[swapIndex]);
-						ShiftDown(swapIndex);
+						std::swap(vector[index], vector[swap_index]);
+						ShiftDown(swap_index);
 					}
 				}
 		};
