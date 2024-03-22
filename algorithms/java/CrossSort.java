@@ -1,6 +1,6 @@
 public class CrossSort
 {
-	public static void Sort(int[] array)
+	public static void sort(int[] array)
 	{
 		int j = 0;
 		int left = 0;

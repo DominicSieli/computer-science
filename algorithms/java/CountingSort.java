@@ -2,7 +2,7 @@ import java.util.*;
 
 public class CountingSort
 {
-	public static void Sort(Integer[] array)
+	public static void sort(Integer[] array)
 	{
 		int min = Collections.min(Arrays.asList(array));
 		int max = Collections.max(Arrays.asList(array));

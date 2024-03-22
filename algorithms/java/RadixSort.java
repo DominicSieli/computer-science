@@ -2,7 +2,7 @@ import java.util.*;
 
 public class RadixSort
 {
-	public static void Sort(int[] array)
+	public static void sort(int[] array)
 	{
 		int max = array[0];
 		Queue<Integer>[] buckets = new LinkedList[10];

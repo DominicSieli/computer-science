@@ -48,9 +48,9 @@ public class Interfaces
 		list.add(new Implementation3());
 		list.add(new Implementation4());
 
-		for(Interface x : list)
+		for(Interface implementation : list)
 		{
-			x.method();
+			implementation.method();
 		}
 	}
 }

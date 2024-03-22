@@ -51,9 +51,9 @@ namespace Interfaces
 			list.Add(new SubClass3());
 			list.Add(new SubClass4());
 
-			foreach(var x in list)
+			foreach(var subClass in list)
 			{
-				x.Method();
+				subClass.Method();
 			}
 		}
 	}

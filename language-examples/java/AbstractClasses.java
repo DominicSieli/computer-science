@@ -52,9 +52,9 @@ public class AbstractClasses
 		list.add(new SubClass3());
 		list.add(new SubClass4());
 
-		for(AbstractClass x : list)
+		for(AbstractClass subClass : list)
 		{
-			x.method();
+			subClass.method();
 		}
 	}
 }

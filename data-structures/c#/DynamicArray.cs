@@ -82,14 +82,14 @@ namespace DataStructures
 		{
 			size = count;
 
-			var newVector = new T[size];
+			var trimmedArray = new T[size];
 
 			for(long index = 0; index < count; index++)
 			{
-				newVector[index] = array[index];
+				trimmedArray[index] = array[index];
 			}
 
-			array = newVector;
+			array = trimmedArray;
 		}
 
 		public void Add(T data, long expansion = 1)
@@ -99,14 +99,14 @@ namespace DataStructures
 			if(count > size)
 			{
 				size += expansion;
-				var newVector = new T[size];
+				var trimmedArray = new T[size];
 
 				for(long index = 0; index < count; index++)
 				{
-					newVector[index] = array[index];
+					trimmedArray[index] = array[index];
 				}
 
-				array = newVector;
+				array = trimmedArray;
 			}
 
 			array[count - 1] = data;

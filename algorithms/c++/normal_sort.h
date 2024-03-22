@@ -12,7 +12,7 @@ namespace Algorithms
 
 			T min = vector[0];
 			T max = vector[0];
-			std::vector<T> normalized_vector(vector.size());
+			std::vector<T> sorted_vector(vector.size());
 
 			for(unsigned int i = 0; i < vector.size(); i++)
 			{
@@ -23,10 +23,10 @@ namespace Algorithms
 			for(unsigned int i = 0; i < vector.size(); i++)
 			{
 				unsigned int index = ((float)(vector[i] - min) / (float)(max - min)) * (float)(vector.size() - 1);
-				normalized_vector[index] = vector[i];
+				sorted_vector[index] = vector[i];
 			}
 
-			vector = normalized_vector;
+			vector = sorted_vector;
 		}
 }
 

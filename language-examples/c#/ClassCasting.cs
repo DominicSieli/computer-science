@@ -16,7 +16,7 @@ namespace ClassCasting
 		{
 			SubClass subClass1 = new SubClass();
 
-			BaseClass baseClass = subClass1;              // Up Casting
+			BaseClass baseClass = subClass1;			  // Up Casting
 			SubClass subClass2 = baseClass as SubClass;   // Down Casting
 
 			Console.WriteLine((subClass1 is SubClass) ? "True" : "False");

@@ -6,12 +6,12 @@
 
 int main()
 {
-	system(CREATE_DIRECTORY "file-output");
-	system(CREATE_FILE "file-output" SLASH "output.txt");
+	system(CREATE_DIRECTORY "output-directory");
+	system(CREATE_FILE "output-directory" SLASH "output-file.txt");
 
 	std::ifstream read_file;
 
-	read_file.open("file-output" SLASH "output.txt", std::ios_base::in);
+	read_file.open("output-directory" SLASH "output-file.txt", std::ios_base::in);
 
 	if(read_file.is_open())
 	{
@@ -28,7 +28,7 @@ int main()
 
 	std::ofstream write_file;
 
-	write_file.open("file-output" SLASH "output.txt", std::ios_base::out | std::ios_base::trunc);
+	write_file.open("output-directory" SLASH "output-file.txt", std::ios_base::out | std::ios_base::trunc);
 
 	if(write_file.is_open())
 	{

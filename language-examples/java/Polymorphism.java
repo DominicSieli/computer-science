@@ -53,6 +53,9 @@ class Polymorphism
 		list.add(new SubClass3());
 		list.add(new SubClass4());
 
-		for(BaseClass x : list) x.Method();
+		for(BaseClass subClass : list)
+		{
+			subClass.Method();
+		}
 	}
 }

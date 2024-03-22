@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Variadic
 {
 	public static int[] method(int... parameters)
@@ -14,6 +12,9 @@ class VariadicMethod
 	{
 		int[] array = Variadic.method(1,2,3,4,5,6,7,8,9,10);
 
-		for(int x : array) System.out.println(x);
+		for(int x : array)
+		{
+			System.out.println(x);
+		}
 	}
 }

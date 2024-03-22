@@ -17,13 +17,13 @@ namespace Linq
 			return new List<Entry>
 			{
 				new Entry() {Tag = "Tag4", Data = 4},
-				new Entry() {Tag = "Tag5", Data = 5},
-				new Entry() {Tag = "Tag6", Data = 6},
-				new Entry() {Tag = "Tag7", Data = 7},
-				new Entry() {Tag = "Tag8", Data = 8},
-				new Entry() {Tag = "Tag2", Data = 2},
-				new Entry() {Tag = "Tag3", Data = 3},
-				new Entry() {Tag = "Tag1", Data = 1}
+					new Entry() {Tag = "Tag5", Data = 5},
+					new Entry() {Tag = "Tag6", Data = 6},
+					new Entry() {Tag = "Tag7", Data = 7},
+					new Entry() {Tag = "Tag8", Data = 8},
+					new Entry() {Tag = "Tag2", Data = 2},
+					new Entry() {Tag = "Tag3", Data = 3},
+					new Entry() {Tag = "Tag1", Data = 1}
 			};
 		}
 	}

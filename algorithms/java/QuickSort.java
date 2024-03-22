@@ -1,38 +1,38 @@
 public class QuickSort
 {
-	private static int Partition(int[] array, int startIndex, int endIndex)
+	private static int partition(int[] array, int start, int end)
 	{
-		int pivot = array[startIndex];
-		int medianIndex = startIndex;
+		int pivot = array[start];
+		int median = start;
 
-		for(int i = startIndex + 1; i <= endIndex; i++)
+		for(int i = start + 1; i <= end; i++)
 		{
 			if(array[i] < pivot)
 			{
-				medianIndex++;
+				median++;
 				int a = array[i];
-				int b = array[medianIndex];
+				int b = array[median];
 				array[i] = b;
-				array[medianIndex] = a;
+				array[median] = a;
 			}
 		}
 
-		int x = array[startIndex];
-		int y = array[medianIndex];
-		array[startIndex] = y;
-		array[medianIndex] = x;
+		int x = array[start];
+		int y = array[median];
+		array[start] = y;
+		array[median] = x;
 
-		return medianIndex;
+		return median;
 	}
 
-	public static void Sort(int[] array, int startIndex, int endIndex)
+	public static void sort(int[] array, int start, int end)
 	{
-		if(startIndex < endIndex)
+		if(start < end)
 		{
-			int pivotIndex = Partition(array, startIndex, endIndex);
+			int pivot = partition(array, start, end);
 
-			Sort(array, startIndex, pivotIndex - 1);
-			Sort(array, pivotIndex + 1, endIndex);
+			sort(array, start, pivot - 1);
+			sort(array, pivot + 1, end);
 		}
 	}
 }

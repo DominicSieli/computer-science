@@ -1,6 +1,6 @@
 public class MergeSort
 {
-	private static void Merge(int[] array, int start, int median, int end)
+	private static void merge(int[] array, int start, int median, int end)
 	{
 		int index = 0;
 		int left = start;
@@ -30,15 +30,15 @@ public class MergeSort
 		}
 	}
 
-	public static void Sort(int[] array, int start, int end)
+	public static void sort(int[] array, int start, int end)
 	{
 		if(start < end)
 		{
 			int median = (start + end) / 2;
 
-			Sort(array, start, median);
-			Sort(array, median + 1, end);
-			Merge(array, start, median, end);
+			sort(array, start, median);
+			sort(array, median + 1, end);
+			merge(array, start, median, end);
 		}
 	}
 }
