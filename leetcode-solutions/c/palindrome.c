@@ -3,32 +3,32 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool IsPalindrome(char* s)
+bool palindrome(char* string)
 {
-	unsigned int l = 0;
-	unsigned int r = strlen(s) - 1;
+	unsigned int left = 0;
+	unsigned int right = strlen(string) - 1;
 
-	while(l < r)
+	while(left < right)
 	{
-		while(l < r && !isalnum(s[l])) l++;
-		while(l < r && !isalnum(s[r])) r--;
-		if(tolower(s[l]) != tolower(s[r])) return false;
-		if(l < r) l++;
-		if(l < r) r--;
+		while(left < right && !isalnum(string[left])) left++;
+		while(left < right && !isalnum(string[right])) right--;
+		if(tolower(string[left]) != tolower(string[right])) return false;
+		if(left < right) left++;
+		if(left < right) right--;
 	}
 
 	return true;
 }
 
-char* s1 = "0a";
-char* s2 = "ab";
-char* s3 = "aBba";
-char* s4 = "a #a c -bbc, a:  a ";
+char* string_1 = "0a";
+char* string_2 = "ab";
+char* string_3 = "aBba";
+char* string_4 = "a #a c -bbc, a:  a ";
 
 int main()
 {
-	printf("%s\n", IsPalindrome(s1) ? "true" : "false");
-	printf("%s\n", IsPalindrome(s2) ? "true" : "false");
-	printf("%s\n", IsPalindrome(s3) ? "true" : "false");
-	printf("%s\n", IsPalindrome(s4) ? "true" : "false");
+	printf("%s\n", palindrome(string_1) ? "true" : "false");
+	printf("%s\n", palindrome(string_2) ? "true" : "false");
+	printf("%s\n", palindrome(string_3) ? "true" : "false");
+	printf("%s\n", palindrome(string_4) ? "true" : "false");
 }

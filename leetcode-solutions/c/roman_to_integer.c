@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 
-int Numerals(char c)
+int numerals(char character)
 {
-	switch(c)
+	switch(character)
 	{
 		case 'I' : return 1;
 		case 'V' : return 5;
@@ -16,40 +17,40 @@ int Numerals(char c)
 	return 0;
 }
 
-int RomanToInteger(char* s)
+int roman_to_integer(char* string)
 {
 	int integer = 0;
 
-	for(int i = 0; i < strlen(s); i++)
+	for(int i = 0; i < strlen(string); i++)
 	{
-		if(i + 1 >= strlen(s))
+		if(i + 1 >= strlen(string))
 		{
-			integer += Numerals(s[i]);
+			integer += numerals(string[i]);
 		}
 
-		if(i + 1 < strlen(s))
+		if(i + 1 < strlen(string))
 		{
-			if(Numerals(s[i]) >= Numerals(s[i + 1])) integer += Numerals(s[i]);
-			if(Numerals(s[i]) < Numerals(s[i + 1])) {integer += Numerals(s[i + 1]) - Numerals(s[i]); i++;}
+			if(numerals(string[i]) >= numerals(string[i + 1])) integer += numerals(string[i]);
+			if(numerals(string[i]) < numerals(string[i + 1])) {integer += numerals(string[i + 1]) - numerals(string[i]); i++;}
 		}
 	}
 
 	return integer;
 }
 
-char* s1 = "IV";
-char* s2 = "IX";
-char* s3 = "III";
-char* s4 = "LVIII";
-char* s5 = "MMCXVI";
-char* s6 = "MCMXCIV";
+char* string_1 = "IV";
+char* string_2 = "IX";
+char* string_3 = "III";
+char* string_4 = "LVIII";
+char* string_5 = "MMCXVI";
+char* string_6 = "MCMXCIV";
 
 int main()
 {
-	printf("%d\n", RomanToInteger(s1));
-	printf("%d\n", RomanToInteger(s2));
-	printf("%d\n", RomanToInteger(s3));
-	printf("%d\n", RomanToInteger(s4));
-	printf("%d\n", RomanToInteger(s5));
-	printf("%d\n", RomanToInteger(s6));
+	printf("%d\n", roman_to_integer(string_1));
+	printf("%d\n", roman_to_integer(string_2));
+	printf("%d\n", roman_to_integer(string_3));
+	printf("%d\n", roman_to_integer(string_4));
+	printf("%d\n", roman_to_integer(string_5));
+	printf("%d\n", roman_to_integer(string_6));
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int RemoveDuplicates(int* array, int size)
+static int remove_duplicates(int* array, int size)
 {
 	int c = 0;
 	int k = size;
@@ -36,7 +36,7 @@ int main()
 	array[8] = 3;
 	array[9] = 3;
 
-	int k = RemoveDuplicates(array, size);
+	int k = remove_duplicates(array, size);
 
 	for(int i = 0; i < k; i++)
 	{

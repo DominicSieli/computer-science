@@ -1,15 +1,17 @@
-struct Node
+#include <stdlib.h>
+
+struct node
 {
 	int data;
-	struct Node* left;
-	struct Node* right;
+	struct node* left;
+	struct node* right;
 };
 
-Node* InvertBinaryTree(struct Node* root)
+struct node* invert_binary_tree(struct node* root)
 {
 	if(root == NULL) return NULL;
-	struct Node* left = InvertBinaryTree(root->left);
-	struct Node* right = InvertBinaryTree(root->right);
+	struct node* left = invert_binary_tree(root->left);
+	struct node* right = invert_binary_tree(root->right);
 	root->left = right;
 	root->right = left;
 	return root;

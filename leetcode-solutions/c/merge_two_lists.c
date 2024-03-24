@@ -1,64 +1,65 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-struct Node
+struct node
 {
 	int data;
-	struct Node* next;
+	struct node* next;
 };
 
-struct Node* MergeTwoListsIterative(struct Node* list1, struct Node* list2)
+struct node* merge_two_lists_iterative(struct node* list_1, struct node* list_2)
 {
-	struct Node* node = NULL;
-	struct Node* head = NULL;
-	struct Node* tail = NULL;
+	struct node* node = NULL;
+	struct node* head = NULL;
+	struct node* tail = NULL;
 
-	if(list1 != NULL && list2 == NULL) return list1;
-	if(list1 == NULL && list2 != NULL) return list2;
+	if(list_1 != NULL && list_2 == NULL) return list_1;
+	if(list_1 == NULL && list_2 != NULL) return list_2;
 
-	while(list1 != NULL && list2 != NULL)
+	while(list_1 != NULL && list_2 != NULL)
 	{
-		node = (list1->data < list2->data) ? list1 : list2;
+		node = (list_1->data < list_2->data) ? list_1 : list_2;
 		if(tail == NULL) head = node; else tail->next = node; tail = node;
-		if(list1->data < list2->data) list1 = list1->next; else list2 = list2->next;
+		if(list_1->data < list_2->data) list_1 = list_1->next; else list_2 = list_2->next;
 	}
 
-	if(list1 != NULL) {tail->next = list1; tail = list1;}
-	if(list2 != NULL) {tail->next = list2; tail = list2;}
+	if(list_1 != NULL) {tail->next = list_1; tail = list_1;}
+	if(list_2 != NULL) {tail->next = list_2; tail = list_2;}
 
 	return head;
 }
 
-struct Node* MergeTwoListsRecursive(struct Node* list1, struct Node* list2)
+struct node* merge_two_lists_recursive(struct node* list_1, struct node* list_2)
 {
-	if(list1 == NULL) return list2;
-	if(list2 == NULL) return list1;
-	if(list1->data < list2->data) {list1->next = MergeTwoListsRecursive(list1->next, list2); return list1;}
-	if(list1->data >= list2->data) {list2->next = MergeTwoListsRecursive(list1, list2->next); return list2;}
+	if(list_1 == NULL) return list_2;
+	if(list_2 == NULL) return list_1;
+	if(list_1->data < list_2->data) {list_1->next = merge_two_lists_recursive(list_1->next, list_2); return list_1;}
+	if(list_1->data >= list_2->data) {list_2->next = merge_two_lists_recursive(list_1, list_2->next); return list_2;}
 	return NULL;
 }
 
-struct Node* list1 = NULL;
-struct Node* list2 = NULL;
+struct node* list_1 = NULL;
+struct node* list_2 = NULL;
 
 int main()
 {
 	for(int i = 10; i > 0; i--)
 	{
-		struct Node* node = malloc(sizeof(struct Node));
+		struct node* node = malloc(sizeof(struct node));
 		node->data = i;
-		node->next = list1;
-		list1 = node;
+		node->next = list_1;
+		list_1 = node;
 	}
 
 	for(int i = 10; i > 0; i--)
 	{
-		struct Node* node = malloc(sizeof(struct Node));
+		struct node* node = malloc(sizeof(struct node));
 		node->data = i;
-		node->next = list2;
-		list2 = node;
+		node->next = list_2;
+		list_2 = node;
 	}
 
-	struct Node* list = MergeTwoListsIterative(list1, list2);
+	struct node* list = merge_two_lists_iterative(list_1, list_2);
 
 	while(list != NULL)
 	{

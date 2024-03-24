@@ -1,14 +1,16 @@
-struct Node
+#include <stdlib.h>
+
+struct node
 {
 	int data;
-	struct Node* next;
+	struct node* next;
 };
 
-struct Node* ReverseLinkedList(struct Node* head)
+struct node* reverse_linked_list(struct node* head)
 {
-	struct Node* next = NULL;
-	struct Node* current = head;
-	struct Node* previous = NULL;
+	struct node* next = NULL;
+	struct node* current = head;
+	struct node* previous = NULL;
 
 	while(current != NULL)
 	{
