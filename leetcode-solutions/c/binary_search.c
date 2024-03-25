@@ -22,12 +22,12 @@ int binary_search(int* array, int size, int target)
 	return -1;
 }
 
-int array[] = {2,4,8,16,32,64,128};
+int array[] = {0,1,2,3,4,5,6,7,8,9};
 int size = sizeof(array) / sizeof(int);
 
 int main()
 {
-	for(int i = 1; i <= 256; i *= 2)
+	for(int i = -1; i < size + 1; i++)
 	{
 		printf("%d: %d\n", i, binary_search(array, size, i));
 	}

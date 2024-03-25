@@ -21,7 +21,6 @@ int reverse_integer(int integer)
 
 int main()
 {
-	printf("%d", reverse_integer(123));
-	printf("\n");
-	printf("%d", reverse_integer(-123));
+	printf("%d\n", reverse_integer(123));
+	printf("%d\n", reverse_integer(-123));
 }

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 static int remove_duplicates(int* array, int size)
 {
@@ -22,19 +21,8 @@ static int remove_duplicates(int* array, int size)
 
 int main()
 {
-	int size = 10;
-	int* array = (int*)malloc(sizeof(int) * size);
-
-	array[0] = 1;
-	array[1] = 1;
-	array[2] = 1;
-	array[3] = 1;
-	array[4] = 2;
-	array[5] = 2;
-	array[6] = 2;
-	array[7] = 3;
-	array[8] = 3;
-	array[9] = 3;
+	int array[] = {1,1,1,1,2,2,2,3,3,3};
+	int size = sizeof(array) / sizeof(int);
 
 	int k = remove_duplicates(array, size);
 
