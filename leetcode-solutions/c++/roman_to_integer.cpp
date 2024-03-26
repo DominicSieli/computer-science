@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-int RomanToInteger(std::string s)
+int RomanToInteger(std::string string)
 {
 	int integer = 0;
 	std::map<char, int> numerals;
@@ -15,36 +15,36 @@ int RomanToInteger(std::string s)
 	numerals['D'] = 500;
 	numerals['M'] = 1000;
 
-	for(int i = 0; i < s.length(); i++)
+	for(unsigned int i = 0; i < string.length(); i++)
 	{
-		if(i + 1 >= s.length())
+		if(i + 1 >= string.length())
 		{
-			integer += numerals[s[i]];
+			integer += numerals[string[i]];
 		}
 
-		if(i + 1 < s.length())
+		if(i + 1 < string.length())
 		{
-			if(numerals[s[i]] >= numerals[s[i + 1]]) integer += numerals[s[i]];
-			if(numerals[s[i]] < numerals[s[i + 1]]) {integer += numerals[s[i + 1]] - numerals[s[i]]; i++;}
+			if(numerals[string[i]] >= numerals[string[i + 1]]) integer += numerals[string[i]];
+			if(numerals[string[i]] < numerals[string[i + 1]]) {integer += numerals[string[i + 1]] - numerals[string[i]]; i++;}
 		}
 	}
 
 	return integer;
 }
 
-std::string s1 = "IV";
-std::string s2 = "IX";
-std::string s3 = "III";
-std::string s4 = "LVIII";
-std::string s5 = "MMCXVI";
-std::string s6 = "MCMXCIV";
+std::string string_1 = "IV";
+std::string string_2 = "IX";
+std::string string_3 = "III";
+std::string string_4 = "LVIII";
+std::string string_5 = "MMCXVI";
+std::string string_6 = "MCMXCIV";
 
 int main()
 {
-	std::cout << RomanToInteger(s1) << '\n';
-	std::cout << RomanToInteger(s2) << '\n';
-	std::cout << RomanToInteger(s3) << '\n';
-	std::cout << RomanToInteger(s4) << '\n';
-	std::cout << RomanToInteger(s5) << '\n';
-	std::cout << RomanToInteger(s6) << '\n';
+	std::cout << RomanToInteger(string_1) << '\n';
+	std::cout << RomanToInteger(string_2) << '\n';
+	std::cout << RomanToInteger(string_3) << '\n';
+	std::cout << RomanToInteger(string_4) << '\n';
+	std::cout << RomanToInteger(string_5) << '\n';
+	std::cout << RomanToInteger(string_6) << '\n';
 }

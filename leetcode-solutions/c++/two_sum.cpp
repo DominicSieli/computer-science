@@ -2,20 +2,20 @@
 #include <iostream>
 #include <unordered_map>
 
-std::vector<int> TwoSum(std::vector<int>& nums, int target)
+std::vector<int> TwoSum(std::vector<int>& vector, int target)
 {
 	std::unordered_map<int, int> cache;
 
-	for(int i = 0; i < nums.size(); ++i)
+	for(unsigned int i = 0; i < vector.size(); ++i)
 	{
-		int complement = target - nums[i];
+		int complement = target - vector[i];
 
 		if(cache.find(complement) != cache.end())
 		{
-			return std::vector<int>({cache[complement], i});
+			return std::vector<int>({cache[complement], (int)i});
 		}
 
-		cache[nums[i]] = i;
+		cache[vector[i]] = i;
 	}
 
 	return std::vector<int>({0, 0});
@@ -28,8 +28,10 @@ int main()
 {
 	results = TwoSum(vector, 17);
 
-	for(int x : results)
+	for(unsigned int integer : results)
 	{
-		std::cout << "[" << x << "]";
+		std::cout << "[" << integer << "]";
 	}
+
+	std::cout << "\n";
 }

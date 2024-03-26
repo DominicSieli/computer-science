@@ -1,42 +1,41 @@
 #include <stack>
 #include <string>
-#include <iomanip>
 #include <iostream>
 
-bool ValidParentheses(std::string s)
+bool ValidParentheses(std::string string)
 {
-	if(s.length() % 2 != 0) return false;
+	if(string.length() % 2 != 0) return false;
 
-	std::stack<char> stk;
+	std::stack<char> stack;
 
-	for(char c : s)
+	for(char character : string)
 	{
-		if(c == '(' || c == '[' || c == '{') stk.push(c);
+		if(character == '(' || character == '[' || character == '{') stack.push(character);
 
-		if(stk.empty())
+		if(stack.empty())
 		{
-			if(c == ')' || c == ']' || c == '}') return false;
+			if(character == ')' || character == ']' || character == '}') return false;
 		}
 
-		if(!stk.empty())
+		if(!stack.empty())
 		{
-			if(c == ')' && stk.top() == '(') stk.pop();
-			else if(c == ')' && stk.top() != '(') return false;
+			if(character == ')' && stack.top() == '(') stack.pop();
+			else if(character == ')' && stack.top() != '(') return false;
 
-			if(c == ']' && stk.top() == '[') stk.pop();
-			else if(c == ']' && stk.top() != '[') return false;
+			if(character == ']' && stack.top() == '[') stack.pop();
+			else if(character == ']' && stack.top() != '[') return false;
 
-			if(c == '}' && stk.top() == '{') stk.pop();
-			else if(c == '}' && stk.top() != '{') return false;
+			if(character == '}' && stack.top() == '{') stack.pop();
+			else if(character == '}' && stack.top() != '{') return false;
 		}
 	}
 
-	return stk.empty();
+	return stack.empty();
 }
 
-std::string s = {"([}}])"};
+std::string string = {"([}}])"};
 
 int main()
 {
-	std::cout << std::boolalpha << ValidParentheses(s);
+	std::cout << std::boolalpha << ValidParentheses(string) << "\n";
 }

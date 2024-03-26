@@ -1,19 +1,19 @@
 #include <vector>
 #include <iostream>
 
-static int RemoveDuplicates(std::vector<int>& array)
+static int RemoveDuplicates(std::vector<int>& vector)
 {
-	int c = 0;
-	int k = array.size();
+	unsigned int c = 0;
+	unsigned int k = vector.size();
 
-	for(int i = 0; i < array.size(); i++)
+	for(unsigned int i = 0; i < vector.size(); i++)
 	{
-		if(i != c && array[i] == array[c]) k--;
+		if(i != c && vector[i] == vector[c]) k--;
 
-		if(array[i] > array[c])
+		if(vector[i] > vector[c])
 		{
 			c++;
-			array[c] = array[i];
+			vector[c] = vector[i];
 		}
 	}
 
@@ -22,12 +22,12 @@ static int RemoveDuplicates(std::vector<int>& array)
 
 int main()
 {
-	std::vector<int> array = {1,1,1,1,2,2,2,2,3,3};
+	std::vector<int> vector = {1,1,1,1,2,2,2,2,3,3};
 
-	int k = RemoveDuplicates(array);
+	unsigned int k = RemoveDuplicates(vector);
 
-	for(int i = 0; i < k; i++)
+	for(unsigned int i = 0; i < k; i++)
 	{
-		std::cout << array[i] << "\n";
+		std::cout << vector[i] << "\n";
 	}
 }

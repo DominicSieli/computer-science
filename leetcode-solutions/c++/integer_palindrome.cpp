@@ -1,19 +1,18 @@
-#include <iomanip>
 #include <iostream>
 #include <bits/stdc++.h>
 
-bool IsIntergerPalindrome(int x)
+bool IntegerPalindrome(int integer)
 {
-	unsigned int n;
-	if(x < 0) return false;
-	if(x > 0) n = (int)std::log10(x);
+	unsigned int exponent;
+	if(integer < 0) return false;
+	if(integer > 0) exponent = (int)std::log10(integer);
 
-	while(x != 0)
+	while(integer != 0)
 	{
-		if(x % 10 != (int)(x / (int)std::pow(10, n))) return false;
-		x = x % (int)std::pow(10, n);
-		x = (int)(x / 10);
-		n -= 2;
+		if(integer % 10 != (int)(integer / (int)std::pow(10, exponent))) return false;
+		integer = integer % (int)std::pow(10, exponent);
+		integer = (int)(integer / 10);
+		exponent -= 2;
 	}
 
 	return true;
@@ -21,5 +20,5 @@ bool IsIntergerPalindrome(int x)
 
 int main()
 {
-	std::cout << std::boolalpha << IsIntergerPalindrome(12122121);
+	std::cout << std::boolalpha << IntegerPalindrome(12122121) << "\n";
 }

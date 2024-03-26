@@ -1,35 +1,36 @@
-#include <cmath>
 #include <vector>
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
-
-double Distance(vector<int> point)
+struct Point
 {
-	return point[0] * point[0] + point[1] * point[1];
+	int x = 0;
+	int y = 0;
+};
+
+double Distance(Point point)
+{
+	return point.x * point.x + point.y * point.y;
 }
 
-vector<vector<int>> ClosestPoints(vector<vector<int>>& points, int k)
+std::vector<Point> ClosestPoints(std::vector<Point>& points, int k)
 {
-	sort(points.begin(), points.end(), [&](vector<int>& a, vector<int>& b)
+	sort(points.begin(), points.end(), [&](Point& point_1, Point& point_2)
 	{
-		return Distance(a) < Distance(b);
+		return Distance(point_1) < Distance(point_2);
 	});
 
-	return vector<vector<int>>(points.begin(), points.begin() + k);
+	return std::vector<Point>(points.begin(), points.begin() + k);
 }
 
 int main()
 {
 	int k = 4;
-	int size = 10;
-	vector<vector<int>> points(size, vector<int>(2,0));
-	for(unsigned int i = 0; i < points.size(); i++) {points[i][0] = size - i - 1; points[i][1] = size - i - 1;}
-	vector<vector<int>> closest = ClosestPoints(points, k);
+	std::vector<Point> points = {{2,3},{4,9},{10,10},{1,1}};
+	std::vector<Point> closest = ClosestPoints(points, k);
 
 	for(unsigned int i = 0; i < closest.size(); i++)
 	{
-		cout << "[" << i << "]" << " " << "[" << closest[i][0] << "," << closest[i][1] << "] : " << Distance(closest[i]) << '\n';
+		std::cout << "[" << i << "]" << " " << "[" << closest[i].x << "," << closest[i].y << "] : " << Distance(closest[i]) << '\n';
 	}
 }

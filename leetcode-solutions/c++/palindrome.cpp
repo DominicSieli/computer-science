@@ -1,34 +1,33 @@
 #include <string>
 #include <ctype.h>
-#include <iomanip>
 #include <iostream>
 
-bool IsPalindrome(std::string s)
+bool Palindrome(std::string string)
 {
-	unsigned int l = 0;
-	unsigned int r = s.length() - 1;
+	unsigned int left = 0;
+	unsigned int right = string.length() - 1;
 
-	while(l < r)
+	while(left < right)
 	{
-		while(l < r && !isalnum(s[l])) l++;
-		while(l < r && !isalnum(s[r])) r--;
-		if(tolower(s[l]) != tolower(s[r])) return false;
-		if(l < r) l++;
-		if(l < r) r--;
+		while(left < right && !isalnum(string[left])) left++;
+		while(left < right && !isalnum(string[right])) right--;
+		if(tolower(string[left]) != tolower(string[right])) return false;
+		if(left < right) left++;
+		if(left < right) right--;
 	}
 
 	return true;
 }
 
-std::string s1 = "0a";
-std::string s2 = "ab";
-std::string s3 = "aBba";
-std::string s4 = "a #a c -bbc, a:  a ";
+std::string string_1 = "0a";
+std::string string_2 = "ab";
+std::string string_3 = "aBba";
+std::string string_4 = "a #a c -bbc, a:  a ";
 
 int main()
 {
-	std::cout << std::boolalpha << IsPalindrome(s1) << '\n';
-	std::cout << std::boolalpha << IsPalindrome(s2) << '\n';
-	std::cout << std::boolalpha << IsPalindrome(s3) << '\n';
-	std::cout << std::boolalpha << IsPalindrome(s4) << '\n';
+	std::cout << std::boolalpha << Palindrome(string_1) << '\n';
+	std::cout << std::boolalpha << Palindrome(string_2) << '\n';
+	std::cout << std::boolalpha << Palindrome(string_3) << '\n';
+	std::cout << std::boolalpha << Palindrome(string_4) << '\n';
 }

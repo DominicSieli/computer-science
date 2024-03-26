@@ -9,55 +9,55 @@ struct Node
 	Node(int x, Node* next) : data(x), next(next) {}
 };
 
-Node* MergeTwoListsIterative(Node* list1, Node* list2)
+Node* MergeTwoListsIterative(Node* list_1, Node* list_2)
 {
 	Node* node = nullptr;
 	Node* head = nullptr;
 	Node* tail = nullptr;
 
-	if(list1 != nullptr && list2 == nullptr) return list1;
-	if(list1 == nullptr && list2 != nullptr) return list2;
+	if(list_1 != nullptr && list_2 == nullptr) return list_1;
+	if(list_1 == nullptr && list_2 != nullptr) return list_2;
 
-	while(list1 != nullptr && list2 != nullptr)
+	while(list_1 != nullptr && list_2 != nullptr)
 	{
-		node = (list1->data < list2->data) ? list1 : list2;
+		node = (list_1->data < list_2->data) ? list_1 : list_2;
 		if(tail == nullptr) head = node; else tail->next = node; tail = node;
-		if(list1->data < list2->data) list1 = list1->next; else list2 = list2->next;
+		if(list_1->data < list_2->data) list_1 = list_1->next; else list_2 = list_2->next;
 	}
 
-	if(list1 != nullptr) {tail->next = list1; tail = list1;}
-	if(list2 != nullptr) {tail->next = list2; tail = list2;}
+	if(list_1 != nullptr) {tail->next = list_1; tail = list_1;}
+	if(list_2 != nullptr) {tail->next = list_2; tail = list_2;}
 
 	return head;
 }
 
-Node* MergeTwoListsRecursive(Node* list1, Node* list2)
+Node* MergeTwoListsRecursive(Node* list_1, Node* list_2)
 {
-	if(list1 == nullptr) return list2;
-	if(list2 == nullptr) return list1;
-	if(list1->data < list2->data) {list1->next = MergeTwoListsRecursive(list1->next, list2); return list1;}
-	if(list1->data >= list2->data) {list2->next = MergeTwoListsRecursive(list1, list2->next); return list2;}
+	if(list_1 == nullptr) return list_2;
+	if(list_2 == nullptr) return list_1;
+	if(list_1->data < list_2->data) {list_1->next = MergeTwoListsRecursive(list_1->next, list_2); return list_1;}
+	if(list_1->data >= list_2->data) {list_2->next = MergeTwoListsRecursive(list_1, list_2->next); return list_2;}
 	return nullptr;
 }
 
-Node* list1 = nullptr;
-Node* list2 = nullptr;
+Node* list_1 = nullptr;
+Node* list_2 = nullptr;
 
 int main()
 {
 	for(int i = 10; i > 0; i--)
 	{
-		Node* node = new Node(i, list1);
-		list1 = node;
+		Node* node = new Node(i, list_1);
+		list_1 = node;
 	}
 
 	for(int i = 10; i > 0; i--)
 	{
-		Node* node = new Node(i, list2);
-		list2 = node;
+		Node* node = new Node(i, list_2);
+		list_2 = node;
 	}
 
-	Node* list = MergeTwoListsIterative(list1, list2);
+	Node* list = MergeTwoListsIterative(list_1, list_2);
 
 	while(list != nullptr)
 	{
