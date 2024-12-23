@@ -6,7 +6,7 @@
 namespace Algorithms
 {
 	template<typename T>
-		void NormalSort(std::vector<T>& vector)
+		void normal_sort(std::vector<T>& vector)
 		{
 			if(vector.size() < 2) return;
 

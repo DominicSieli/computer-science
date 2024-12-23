@@ -6,7 +6,7 @@
 namespace Algorithms
 {
 	template<typename T>
-		int BinarySearch(std::vector<T>& vector, T target)
+		int binary_search(std::vector<T>& vector, T target)
 		{
 			int left = 0;
 			int median = 0;

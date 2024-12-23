@@ -6,7 +6,7 @@
 namespace Algorithms
 {
 	template<typename T>
-		void CountingSort(std::vector<T>& vector)
+		void counting_sort(std::vector<T>& vector)
 		{
 			int min = vector[0];
 			int max = vector[0];

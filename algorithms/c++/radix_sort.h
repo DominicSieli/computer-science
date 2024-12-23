@@ -7,7 +7,7 @@
 namespace Algorithms
 {
 	template<typename T>
-		void RadixSort(std::vector<T>& vector)
+		void radix_sort(std::vector<T>& vector)
 		{
 			T max = vector[0];
 			std::vector<std::queue<T>> buckets(10);

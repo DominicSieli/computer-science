@@ -6,7 +6,7 @@
 namespace Algorithms
 {
 	template<typename T>
-		void BubbleSort(std::vector<T>& vector)
+		void bubble_sort(std::vector<T>& vector)
 		{
 			bool sorted = false;
 

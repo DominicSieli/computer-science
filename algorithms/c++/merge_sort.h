@@ -6,7 +6,7 @@
 namespace Algorithms
 {
 	template<typename T>
-		void Merge(std::vector<T>& vector, unsigned int start, unsigned int median, unsigned int end)
+		void merge(std::vector<T>& vector, unsigned int start, unsigned int median, unsigned int end)
 		{
 			unsigned int index = 0;
 			unsigned int left = start;
@@ -38,15 +38,15 @@ namespace Algorithms
 		}
 
 	template<typename T>
-		void MergeSort(std::vector<T>& vector, unsigned int start, unsigned int end)
+		void merge_sort(std::vector<T>& vector, unsigned int start, unsigned int end)
 		{
 			if(start < end)
 			{
 				unsigned int median = (start + end) / 2;
 
-				MergeSort(vector, start, median);
-				MergeSort(vector, median + 1, end);
-				Merge(vector, start, median, end);
+				merge_sort(vector, start, median);
+				merge_sort(vector, median + 1, end);
+				merge(vector, start, median, end);
 			}
 		}
 }
