@@ -1,7 +1,7 @@
 #ifndef DEQUE
 #define DEQUE
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T>
 		class Deque

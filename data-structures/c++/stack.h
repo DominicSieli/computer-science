@@ -1,7 +1,7 @@
 #ifndef STACK
 #define STACK
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T>
 		class Stack

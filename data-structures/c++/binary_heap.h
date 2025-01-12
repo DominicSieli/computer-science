@@ -5,7 +5,7 @@
 #include <bits/stdc++.h>
 #include <initializer_list>
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T>
 		class BinaryHeap

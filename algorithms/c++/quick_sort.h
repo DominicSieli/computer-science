@@ -3,7 +3,7 @@
 
 #include <vector>
 
-namespace Algorithms
+namespace algorithms
 {
 	template<typename T>
 		unsigned int partition(std::vector<T>& vector, unsigned int start, unsigned int end)

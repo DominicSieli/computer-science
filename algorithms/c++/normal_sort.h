@@ -3,7 +3,7 @@
 
 #include <vector>
 
-namespace Algorithms
+namespace algorithms
 {
 	template<typename T>
 		void normal_sort(std::vector<T>& vector)

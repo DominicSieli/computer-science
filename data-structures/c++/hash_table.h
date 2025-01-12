@@ -5,7 +5,7 @@
 #include <string>
 #include <initializer_list>
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T, unsigned int S>
 		class HashTable

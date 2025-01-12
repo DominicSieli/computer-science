@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <initializer_list>
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T>
 		class Graph

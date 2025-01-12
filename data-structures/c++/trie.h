@@ -7,7 +7,7 @@
 
 #define SIZE 256
 
-namespace DataStructures
+namespace data_structures
 {
 	class Trie
 	{

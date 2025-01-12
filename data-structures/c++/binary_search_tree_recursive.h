@@ -4,7 +4,7 @@
 #include <queue>
 #include <vector>
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T>
 		class BinarySearchTreeRecursive

@@ -1,7 +1,7 @@
 #ifndef MATRIX_3D
 #define MATRIX_3D
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T, unsigned int X, unsigned int Y, unsigned int Z>
 		class Matrix3D

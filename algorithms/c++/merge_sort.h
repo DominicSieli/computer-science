@@ -3,7 +3,7 @@
 
 #include <vector>
 
-namespace Algorithms
+namespace algorithms
 {
 	template<typename T>
 		void merge(std::vector<T>& vector, unsigned int start, unsigned int median, unsigned int end)

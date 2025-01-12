@@ -3,7 +3,7 @@
 
 #include <initializer_list>
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T>
 		class Queue

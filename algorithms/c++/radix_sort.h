@@ -4,7 +4,7 @@
 #include <queue>
 #include <vector>
 
-namespace Algorithms
+namespace algorithms
 {
 	template<typename T>
 		void radix_sort(std::vector<T>& vector)

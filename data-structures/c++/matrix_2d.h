@@ -1,7 +1,7 @@
 #ifndef MATRIX_2D
 #define MATRIX_2D
 
-namespace DataStructures
+namespace data_structures
 {
 	template<typename T, unsigned int X, unsigned int Y>
 		class Matrix2D
